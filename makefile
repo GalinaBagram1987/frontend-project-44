@@ -8,4 +8,5 @@ install:
 brain-games:
         node bin/brain-games.js # run the game from this file
 
-
+publish:
+        npm publish --dry-run
