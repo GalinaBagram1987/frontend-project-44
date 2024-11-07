@@ -10,3 +10,8 @@ brain-games:
 
 publish:
         npm publish --dry-run
+
+.PHONY: lint
+
+lint:
+        npx eslint .
