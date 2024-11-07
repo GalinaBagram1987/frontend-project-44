@@ -1,10 +1,10 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "type": "module", 
+  "type": "module",
   "description": "[![Actions Status](https://github.com/GalinaBagram1987/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/GalinaBagram1987/frontend-project-44/actions)",
   "main": "index.js",
-   "bin": {
+  "bin": {
     "brain-games": "bin/brain-games.js"
   },
   "scripts": {
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/GalinaBagram1987/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/GalinaBagram1987/frontend-project-44#readme"
+  "homepage": "https://github.com/GalinaBagram1987/frontend-project-44#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
+}
