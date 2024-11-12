@@ -15,3 +15,6 @@
 
 #test brain-gcd
 [![asciicast](https://asciinema.org/a/07nJ9WW3jXJ4NyMuNY4Wh1r2v.svg)](https://asciinema.org/a/07nJ9WW3jXJ4NyMuNY4Wh1r2v)
+
+#test brain-progression
+[![asciicast](https://asciinema.org/a/APwlka1BGsTuBsROOnx7wVaCR.svg)](https://asciinema.org/a/APwlka1BGsTuBsROOnx7wVaCR)
