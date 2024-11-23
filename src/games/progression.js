@@ -27,10 +27,6 @@ const progression = () => {
     const hiddenElArr = answerArray;
     hiddenElArr[randomIndex] = '..';
     const questionArray = hiddenElArr.join(' ');
-
-    //const questionArray = answerArray;
-    //questionArray[randomIndex] = '..';
-
     console.log(`Question: ${questionArray}`);
     const answer = readlineSync.question('Your answer: ');
     if (correctAnswer === Number(answer)) {
