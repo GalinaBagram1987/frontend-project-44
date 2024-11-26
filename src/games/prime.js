@@ -26,14 +26,11 @@ const findPrime = () => {
     if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(
-        `'${answer}' is the wrong answer ;(. Correct answer was '${correctAnswer}'.`
-      );
+      console.log(`'${answer}' is the wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${playerName}!`);
       return; // Завершаем игру, если ответ неверен
     }
   }
   congratulations(playerName);
 };
-
 export default findPrime;
