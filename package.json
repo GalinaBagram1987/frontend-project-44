@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/GalinaBagram1987/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/GalinaBagram1987/frontend-project-44/actions)",
+  "description": " Brain Games GB(https://github.com/GalinaBagram1987/frontend-project-44/actions)",
   "main": "index.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
