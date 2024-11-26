@@ -6,6 +6,7 @@ questionGames('Answer "yes" if the number is even, otherwise answer "no".');
 const isEven = () => {
   for (let i = 3; i > 0; i -= 1) {
     const num = Math.ceil(Math.random() * 100);
+    console.log(`Question: ${num}`);
     const answer = readlineSync.question('Your answer: ');
     if (num % 2 === 0 && answer === 'yes') {
       console.log('Correct!');
