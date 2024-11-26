@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
-import { greetings } from '../index.js';
-import { questionGames } from '../index.js';
-import { congratulations } from '../index.js';
+import { greetings, questionGames, congratulations } from '../index.js';
 
 const playerName = greetings();
 questionGames('What number is missing in the progression');
@@ -32,9 +30,7 @@ const progression = () => {
     if (correctAnswer === Number(answer)) {
       console.log('Correct!');
     } else {
-      console.log(
-        `'${answer}'  is wrong answer ;(. Correct answer was '${correctAnswer}'.`
-      );
+      console.log(`'${answer}'  is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${playerName}!`);
       return;
     }

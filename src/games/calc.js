@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
-import { greetings } from '../index.js';
-import { questionGames } from '../index.js';
-import { congratulations } from '../index.js';
+import { greetings, questionGames, congratulations } from '../index.js';
 
 const playerName = greetings();
 questionGames('What is the result of the expression?');
@@ -23,15 +21,15 @@ const brainCalc = () => {
       case '*':
         calculation = left * right;
         break;
+      default:
+        throw new Error(`'Unsupported operator: '${operators[j]}`);
     }
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (Number(answer) === calculation) {
       console.log('Correct!');
     } else {
-      console.log(
-        `'${answer}' is wrong answer ;(. Correct answer was '${calculation}'.\n Let's try again, ${playerName}!`
-      );
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${calculation}'.\n Let's try again, ${playerName}!`);
       return;
     }
   }

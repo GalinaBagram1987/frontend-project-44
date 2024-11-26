@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
-import { greetings } from '../index.js';
-import { questionGames } from '../index.js';
-import { congratulations } from '../index.js';
+import { greetings, questionGames, congratulations } from '../index.js';
 
 const playerName = greetings();
 questionGames('Answer "yes" if given number is prime. Otherwise answer "no".');
