@@ -1,4 +1,3 @@
-// import readlineSync from 'readline-sync';
 import randomNumber from '../utility.js';
 import playGame from '../index.js';
 
@@ -8,13 +7,13 @@ export const generateQuestion = () => {
   return result;
 };
 
-export const gameRules = () => {
+export const questionAndAnswer = () => {
   const question = generateQuestion();
   const currentAnswer = question % 2 === 0 ? 'yes' : 'no';
   return [question, currentAnswer];
 };
 
 const isEven = () => {
-  playGame(gameRules);
+  playGame(questionGame, questionAndAnswer);
 };
 export { isEven };
