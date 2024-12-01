@@ -1,35 +1,32 @@
-import readlineSync from 'readline-sync';
-import { greetings, questionGames, congratulations } from '../index.js';
+import randomNumber from '../utility.js';
+import playGame from '../index.js';
 
-const playerName = greetings();
-questionGames('Find the greatest common divisor of given numbers.');
-const greatestCommomDivisor = () => {
-  for (let i = 3; i > 0; i -= 1) {
-    const a = Math.ceil(Math.random() * 100);
-    const b = Math.ceil(Math.random() * 100);
-    console.log(`Question: ${a} ${b}`);
-    const answer = readlineSync.question('Your answer: ');
-    const gcd = () => {
-      let x = a;
-      let y = b;
-      while (x !== y) {
-        if (x > y) {
-          x -= y;
-        } else {
-          y -= x;
-        }
-      }
-      return x;
-    };
-    const correctAnswer = gcd();
-    if (Number(answer) === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer}  is wrong answer ;(. Correct answer was ${correctAnswer}`);
-      console.log(`Let's try again, ${playerName}!`);
-      return;
-    }
-  }
-  congratulations(playerName);
+export const questionGame = 'Find the greatest common divisor of given numbers.';
+export const generateQuestion = () => {
+  const a = randomNumber();
+  const b = randomNumber();
+  const question = `${a} ${b}`;
+  return [question, a, b];
 };
-export default greatestCommomDivisor;
+export const questionAndAnswer = () => {
+  const [question, a, b] = generateQuestion();
+  const gcd = () => {
+    let x = a;
+    let y = b;
+    while (x !== y) {
+      if (x > y) {
+        x -= y;
+      } else {
+        y -= x;
+      }
+    }
+    return x;
+  };
+  const currAnswer = gcd();
+  const currentAnswer = currAnswer.toString();
+  return [question, currentAnswer];
+};
+const greatestCommonDivisor = () => {
+  playGame(questionGame, questionAndAnswer);
+};
+export { greatestCommonDivisor };
