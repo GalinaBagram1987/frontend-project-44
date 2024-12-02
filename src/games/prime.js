@@ -1,8 +1,7 @@
-import readlineSync from 'readline-sync';
-import { greetings, questionGames, congratulations } from '../index.js';
+import randomNumber from '../utility.js';
+import playGame from '../index.js';
 
-const playerName = greetings();
-questionGames('Answer "yes" if given number is prime. Otherwise answer "no".');
+export const questionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 // отдельно создадим функцию для проверки простое или нет число, чтобы использовать ее в игре
 const checkPrime = (num) => {
   if (num <= 1) return false; // 0 и 1 не могут быть простым числом
@@ -11,26 +10,17 @@ const checkPrime = (num) => {
       return false; // Если найден хотя бы один доп делитель, то число не простое
     }
   }
-  return true; // Число простое
+  return true; // Число простoe
 };
-// создаем функцию с циклом для самой игры
+
+export const questionAndAnswer = () => {
+  const question = randomNumber();
+  const isPrime = checkPrime(question); // Проверяем, является ли число простым, fix result
+  const currentAnswer = isPrime ? 'yes' : 'no'; // if isPrime === true => correctAnswer = 'yes', if isPrime === false => correctAnwer === 'no'
+  return [question, currentAnswer];
+};
 const findPrime = () => {
-  for (let i = 3; i > 0; i -= 1) {
-    const num = Math.ceil(Math.random() * 100);
-    console.log(`Question: ${num}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    const isPrime = checkPrime(num); // Проверяем, является ли число простым
-    const correctAnswer = isPrime ? 'yes' : 'no'; // if isPrime === true => correctAnswer = 'yes', if isPrime === false => correctAnwer === 'no'
-
-    if (answer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is the wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${playerName}!`);
-      return; // Завершаем игру, если ответ неверен
-    }
-  }
-  congratulations(playerName);
+  playGame(questionGame, questionAndAnswer);
 };
-export default findPrime;
+
+export { findPrime };
