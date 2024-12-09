@@ -20,7 +20,7 @@ export const questionAndAnswer = () => {
   const answerArray = arrayNumbers();
   const randomIndex = isRandomNumber();
   const currentAnswer = answerArray[randomIndex].toString();
-  const hiddenElArr = answerArray;
+  const hiddenElArr = [...answerArray];
   hiddenElArr[randomIndex] = '..';
   const question = hiddenElArr.join(' ');
   return [question, currentAnswer];
