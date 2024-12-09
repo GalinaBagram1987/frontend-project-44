@@ -1,5 +1,5 @@
-const randomNumber = () => {
+const isRandomNumber = () => {
   const result = Math.ceil(Math.random() * 100);
   return result;
 };
-export default randomNumber;
+export default isRandomNumber;
