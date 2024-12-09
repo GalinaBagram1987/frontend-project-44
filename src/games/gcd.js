@@ -1,10 +1,10 @@
-import randomNumber from '../utility.js';
+import isRandomNumber from '../utility.js';
 import playGame from '../index.js';
 
 export const questionGame = 'Find the greatest common divisor of given numbers.';
 export const generateQuestion = () => {
-  const a = randomNumber();
-  const b = randomNumber();
+  const a = isRandomNumber();
+  const b = isRandomNumber();
   const question = `${a} ${b}`;
   return [question, a, b];
 };
@@ -26,7 +26,6 @@ export const questionAndAnswer = () => {
   const currentAnswer = currAnswer.toString();
   return [question, currentAnswer];
 };
-const greatestCommonDivisor = () => {
+export const greatestCommonDivisor = () => {
   playGame(questionGame, questionAndAnswer);
 };
-export { greatestCommonDivisor };

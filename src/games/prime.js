@@ -1,4 +1,4 @@
-import randomNumber from '../utility.js';
+import isRandomNumber from '../utility.js';
 import playGame from '../index.js';
 
 export const questionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -14,13 +14,11 @@ const checkPrime = (num) => {
 };
 
 export const questionAndAnswer = () => {
-  const question = randomNumber();
+  const question = isRandomNumber();
   const isPrime = checkPrime(question); // Проверяем, является ли число простым, fix result
   const currentAnswer = isPrime ? 'yes' : 'no'; // if isPrime === true => correctAnswer = 'yes', if isPrime === false => correctAnwer === 'no'
   return [question, currentAnswer];
 };
-const findPrime = () => {
+export const findPrime = () => {
   playGame(questionGame, questionAndAnswer);
 };
-
-export { findPrime };

@@ -1,11 +1,11 @@
-import randomNumber from '../utility.js';
+import isRandomNumber from '../utility.js';
 import playGame from '../index.js';
 
 export const questionGame = 'What number is missing in the progression';
 
 const arrayNumbers = () => {
-  let startNumber = randomNumber();
-  const multiplier = Math.ceil(Math.random() * 10);
+  let startNumber = isRandomNumber();
+  const multiplier = isRandomNumber();
   const quantity = 10;
   let j = 0;
   const arrNumber = [];
@@ -25,7 +25,6 @@ export const questionAndAnswer = () => {
   const question = hiddenElArr.join(' ');
   return [question, currentAnswer];
 };
-const progression = () => {
+export const progression = () => {
   playGame(questionGame, questionAndAnswer);
 };
-export { progression };

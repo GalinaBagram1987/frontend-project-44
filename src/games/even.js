@@ -1,9 +1,9 @@
-import randomNumber from '../utility.js';
+import isRandomNumber from '../utility.js';
 import playGame from '../index.js';
 
 export const questionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 export const generateQuestion = () => {
-  const result = randomNumber();
+  const result = isRandomNumber();
   return result;
 };
 
@@ -13,7 +13,6 @@ export const questionAndAnswer = () => {
   return [question, currentAnswer];
 };
 
-const isEven = () => {
+export const isEven = () => {
   playGame(questionGame, questionAndAnswer);
 };
-export { isEven };

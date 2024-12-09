@@ -1,10 +1,10 @@
-import randomNumber from '../utility.js';
+import isRandomNumber from '../utility.js';
 import playGame from '../index.js';
 
 export const questionGames = 'What is the result of the expression?';
 export const generateQuestion = () => {
-  const left = randomNumber();
-  const right = randomNumber();
+  const left = isRandomNumber();
+  const right = isRandomNumber();
   const operators = ['+', '-', '*'];
   const j = Math.floor(Math.random() * operators.length);
   const question = `${left} ${operators[j]} ${right}`;
@@ -40,7 +40,6 @@ const questionAndAnswer = () => {
   return [question, String(currentAnswer)];
 };
 
-const brainCalc = () => {
+export const brainCalc = () => {
   playGame(questionGames, questionAndAnswer);
 };
-export { brainCalc };
