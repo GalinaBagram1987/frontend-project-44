@@ -7,18 +7,12 @@ const calc = {
   '+': (x, y) => x + y,
   '-': (x, y) => x - y,
   '*': (x, y) => x * y,
-  '/': (x, y) => {
-    if (y === 0) {
-      return null;
-    }
-    return x / y;
-  },
 }; // создаем функции для каждой операции
 
 const questionAndAnswer = () => {
   const left = isRandomNumber(1, 10);
   const right = isRandomNumber(1, 10);
-  const operators = ['+', '-', '*', '/'];
+  const operators = ['+', '-', '*'];
   const multIndex = Math.floor(Math.random() * operators.length);
   // я знаю, что могу написать просто равно isRandomNumber(0, 2);
   // но так игра интересная не получается, очень часто выпадают одно и тоже действие
