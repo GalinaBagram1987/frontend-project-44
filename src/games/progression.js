@@ -18,7 +18,7 @@ const arrayNumbers = () => {
 };
 export const questionAndAnswer = () => {
   const answerArray = arrayNumbers();
-  const randomIndex = Math.floor(Math.random() * 10);
+  const randomIndex = isRandomNumber();
   const currentAnswer = answerArray[randomIndex].toString();
   const hiddenElArr = answerArray;
   hiddenElArr[randomIndex] = '..';

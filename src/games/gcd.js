@@ -2,27 +2,25 @@ import isRandomNumber from '../utility.js';
 import playGame from '../index.js';
 
 export const questionGame = 'Find the greatest common divisor of given numbers.';
-export const generateQuestion = () => {
+// отдельно вынесем функцию для опред наиб общ делителя
+const gcd = (a, b) => {
+  let x = a;
+  let y = b;
+  while (x !== y) {
+    if (x > y) {
+      x -= y;
+    } else {
+      y -= x;
+    }
+  }
+  return x;
+};
+
+export const questionAndAnswer = () => {
   const a = isRandomNumber();
   const b = isRandomNumber();
   const question = `${a} ${b}`;
-  return [question, a, b];
-};
-export const questionAndAnswer = () => {
-  const [question, a, b] = generateQuestion();
-  const gcd = () => {
-    let x = a;
-    let y = b;
-    while (x !== y) {
-      if (x > y) {
-        x -= y;
-      } else {
-        y -= x;
-      }
-    }
-    return x;
-  };
-  const currAnswer = gcd();
+  const currAnswer = gcd(a, b);
   const currentAnswer = currAnswer.toString();
   return [question, currentAnswer];
 };
