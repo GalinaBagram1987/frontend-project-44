@@ -4,8 +4,8 @@ import playGame from '../index.js';
 export const questionGame = 'What number is missing in the progression';
 
 const arrayNumbers = () => {
-  let startNumber = isRandomNumber();
-  const multiplier = isRandomNumber();
+  let startNumber = isRandomNumber(1, 10);
+  const multiplier = isRandomNumber(1, 10);
   const quantity = 10;
   let j = 0;
   const arrNumber = [];
@@ -18,7 +18,7 @@ const arrayNumbers = () => {
 };
 export const questionAndAnswer = () => {
   const answerArray = arrayNumbers();
-  const randomIndex = isRandomNumber();
+  const randomIndex = isRandomNumber(1, 9);
   const currentAnswer = answerArray[randomIndex].toString();
   const hiddenElArr = [...answerArray];
   hiddenElArr[randomIndex] = '..';

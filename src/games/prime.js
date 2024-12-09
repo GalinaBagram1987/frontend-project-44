@@ -14,7 +14,7 @@ const isPrime = (num) => {
 };
 
 export const questionAndAnswer = () => {
-  const question = isRandomNumber();
+  const question = isRandomNumber(1, 50);
   const checkPrime = isPrime(question); // Проверяем, является ли число простым, fix result
   const currentAnswer = checkPrime ? 'yes' : 'no'; // if isPrime === true => correctAnswer = 'yes', if isPrime === false => correctAnwer === 'no'
   return [question, currentAnswer];

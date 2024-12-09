@@ -17,8 +17,8 @@ const gcd = (a, b) => {
 };
 
 export const questionAndAnswer = () => {
-  const a = isRandomNumber();
-  const b = isRandomNumber();
+  const a = isRandomNumber(1, 50);
+  const b = isRandomNumber(1, 50);
   const question = `${a} ${b}`;
   const currAnswer = gcd(a, b);
   const currentAnswer = currAnswer.toString();

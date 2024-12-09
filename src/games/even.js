@@ -10,7 +10,7 @@ const isEven = (num) => {
   return false;
 };
 export const questionAndAnswer = () => {
-  const question = isRandomNumber();
+  const question = isRandomNumber(1, 50);
   const currentAnswer = isEven(question) ? 'yes' : 'no';
   return [question, currentAnswer];
 };
