@@ -6,7 +6,8 @@ const playGame = (questionGame, questionAndAnswer) => {
   console.log(`Hello, ${playerName}!`);
   console.log(questionGame);
 
-  for (let i = 3; i > 0; i -= 1) {
+  const round = 3;
+  for (let i = 1; i <= round; i += 1) {
     const [question, currentAnswer] = questionAndAnswer();
     console.log(`Question: ${question}`);
     const yourAnswer = readlineSync.question('Your answer: ');
