@@ -1,8 +1,8 @@
-import isRandomNumber from '../utility.js';
+import getRandomNumber from '../utility.js';
 import playGame from '../index.js';
 
 export const questionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
-// выносим функцию определения четности отдельно
+
 const isEven = (num) => {
   if (num % 2 === 0) {
     return true;
@@ -10,7 +10,7 @@ const isEven = (num) => {
   return false;
 };
 export const questionAndAnswer = () => {
-  const question = isRandomNumber(1, 50);
+  const question = getRandomNumber(1, 50);
   const currentAnswer = isEven(question) ? 'yes' : 'no';
   return [question, currentAnswer];
 };

@@ -1,8 +1,8 @@
-import isRandomNumber from '../utility.js';
+import getRandomNumber from '../utility.js';
 import playGame from '../index.js';
 
 export const questionGame = 'Find the greatest common divisor of given numbers.';
-// отдельно вынесем функцию для опред наиб общ делителя
+
 const gcd = (a, b) => {
   let x = a;
   let y = b;
@@ -17,8 +17,8 @@ const gcd = (a, b) => {
 };
 
 export const questionAndAnswer = () => {
-  const a = isRandomNumber(1, 50);
-  const b = isRandomNumber(1, 50);
+  const a = getRandomNumber(1, 50);
+  const b = getRandomNumber(1, 50);
   const question = `${a} ${b}`;
   const currAnswer = gcd(a, b);
   const currentAnswer = currAnswer.toString();

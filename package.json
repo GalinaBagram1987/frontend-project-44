@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/GalinaBagram1987/frontend-project-44#readme",
   "dependencies": {
-    "inquirer": "^12.1.0",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {

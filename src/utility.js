@@ -1,5 +1,6 @@
-const isRandomNumber = (min, max) => {
-  const result = Math.ceil((Math.random() * (max - min) + min));
-  return result;
+const getRandomNumber = (min, max) => {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 };
-export default isRandomNumber;
+export default getRandomNumber;

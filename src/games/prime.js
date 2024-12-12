@@ -1,22 +1,22 @@
-import isRandomNumber from '../utility.js';
+import getRandomNumber from '../utility.js';
 import playGame from '../index.js';
 
 export const questionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-// отдельно создадим функцию для проверки простое или нет число, чтобы использовать ее в игре
+
 const isPrime = (num) => {
-  if (num <= 1) return false; // 0 и 1 не могут быть простым числом
+  if (num <= 1) return false;
   for (let j = 2; j < num; j += 1) {
     if (num % j === 0) {
-      return false; // Если найден хотя бы один доп делитель, то число не простое
+      return false;
     }
   }
-  return true; // Число простoe
+  return true;
 };
 
 export const questionAndAnswer = () => {
-  const question = isRandomNumber(1, 50);
-  const checkPrime = isPrime(question); // Проверяем, является ли число простым, fix result
-  const currentAnswer = checkPrime ? 'yes' : 'no'; // if isPrime === true => correctAnswer = 'yes', if isPrime === false => correctAnwer === 'no'
+  const question = getRandomNumber(1, 50);
+  const checkPrime = isPrime(question);
+  const currentAnswer = checkPrime ? 'yes' : 'no';
   return [question, currentAnswer];
 };
 export const findPrime = () => {
