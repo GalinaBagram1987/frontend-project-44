@@ -3,7 +3,7 @@ import playGame from '../index.js';
 
 export const questionGame = 'What number is missing in the progression';
 
-const arrayNumbers = () => {
+const isArrayNumbers = () => {
   let startNumber = getRandomNumber(1, 10);
   const multiplier = getRandomNumber(1, 10);
   const quantity = 10;
@@ -17,7 +17,7 @@ const arrayNumbers = () => {
   return arrNumber;
 };
 export const questionAndAnswer = () => {
-  const answerArray = arrayNumbers();
+  const answerArray = isArrayNumbers();
   const randomIndex = getRandomNumber(1, 9);
   const currentAnswer = answerArray[randomIndex].toString();
   const hiddenElArr = [...answerArray];
